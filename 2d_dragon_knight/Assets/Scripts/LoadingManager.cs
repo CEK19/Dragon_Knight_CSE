@@ -3,9 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class LoadingManager : MonoBehaviour
 {
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F))
-            SceneManager.LoadScene(1);
+    public void PlayGame() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 16408925}
   m_Layer: 0
   m_Name: Door
-  m_TagString: Untagged
+  m_TagString: Last Door
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9031,6 +9031,10 @@ PrefabInstance:
     - target: {fileID: 339728066529960365, guid: 9acc49d7ce5e1ab45a98f01a135b8b02, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 339728066529960368, guid: 9acc49d7ce5e1ab45a98f01a135b8b02, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 339728066529960371, guid: 9acc49d7ce5e1ab45a98f01a135b8b02, type: 3}
       propertyPath: m_RootOrder

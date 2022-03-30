@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement Parameters")]
@@ -134,5 +134,19 @@ public class PlayerMovement : MonoBehaviour
     public bool canAttack()
     {
         return horizontalInput == 0 && isGrounded() && !onWall();
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        int maxScenceIndex = SceneManager.sceneCountInBuildSettings;
+
+        if (other.gameObject.tag == "Last Door") {
+            if (SceneManager.GetActiveScene().buildIndex + 1 <= maxScenceIndex - 1) {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+
+            else {
+                Debug.Log("OK END GAME ROI NE");
+            }
+        }
     }
 }
