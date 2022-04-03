@@ -141,7 +141,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (other.gameObject.tag == "Last Door") {
             if (SceneManager.GetActiveScene().buildIndex + 1 <= maxScenceIndex - 1) {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                LoadingScence.instance.LoadingScenceFunc(SceneManager.GetActiveScene().buildIndex + 1);
             }
 
             else {
