@@ -21,19 +21,25 @@ public class LoadingManager : MonoBehaviour
     }
     public void PlayGame() {
         LoadingScence.instance.LoadingScenceFunc(SceneManager.GetActiveScene().buildIndex + 1);
+        Time.timeScale = 1;   
     }
 
     public void Continue() {
         menuCanva.SetActive(false);
-        Time.timeScale = 1;
+        Time.timeScale = 1;        
     }
 
-    public void PlayAgain() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    public void PlayAgain() {        
+        LoadingScence.instance.LoadingScenceFunc(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
     }
 
     public void Exit() {
         Application.Quit();
+    }
+
+    public void congratRetry() {
+        LoadingScence.instance.LoadingScenceFunc(1);
+        Time.timeScale = 1; 
     }
 }

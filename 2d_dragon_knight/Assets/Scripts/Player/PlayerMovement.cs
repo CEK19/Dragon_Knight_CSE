@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D boxCollider;
     private float wallJumpCooldown;
     private float horizontalInput;
-
+    [SerializeField] private GameObject winCanva;
     private void Awake()
     {
         //Grab references for rigidbody and animator from object
@@ -144,8 +144,11 @@ public class PlayerMovement : MonoBehaviour
                 LoadingScence.instance.LoadingScenceFunc(SceneManager.GetActiveScene().buildIndex + 1);
             }
 
-            else {
-                Debug.Log("OK END GAME ROI NE");
+            if (SceneManager.GetActiveScene().buildIndex == maxScenceIndex - 1) {
+                if (winCanva != null) {
+                    winCanva.SetActive(true);
+                    Time.timeScale = 0; 
+                }
             }
         }
     }

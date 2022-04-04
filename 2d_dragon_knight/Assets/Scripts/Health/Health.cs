@@ -21,7 +21,7 @@ public class Health : MonoBehaviour
     [Header("Death Sound")]
     [SerializeField] private AudioClip deathSound;
     [SerializeField] private AudioClip hurtSound;
-
+    [SerializeField] private GameObject deadMenuCanva;
     private void Awake()
     {
         currentHealth = startingHealth;
@@ -51,7 +51,10 @@ public class Health : MonoBehaviour
                 anim.SetTrigger("die");
 
                 dead = true;
-                SoundManager.instance.PlaySound(deathSound);
+                SoundManager.instance.PlaySound(deathSound);    
+                if (deadMenuCanva != null) {
+                    deadMenuCanva.SetActive(true);
+                }
             }
         }
     }

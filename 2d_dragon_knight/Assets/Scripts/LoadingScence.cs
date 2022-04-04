@@ -8,6 +8,7 @@ public class LoadingScence : MonoBehaviour
     public static LoadingScence instance;
     [SerializeField] private GameObject _loaderCanvas;
     [SerializeField] private Slider _progressBar;
+    
     private float _target;
     private void Awake() {
         if (instance == null) {
@@ -30,8 +31,7 @@ public class LoadingScence : MonoBehaviour
 
         do {
             await Task.Delay(100);
-            _target = scence.progress;
-            Debug.Log(_progressBar.value);
+            _target = scence.progress;        
         } while(scence.progress < 0.9f);
 
         await Task.Delay(1000);
